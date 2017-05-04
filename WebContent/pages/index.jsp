@@ -13,7 +13,7 @@
 
     <title>BoxMex</title>
     
-    <link rel="shortcut icon" href="../img/boxMexIcon.png">
+    <link rel="shortcut icon" href="<s:url value="/img/boxMexIcon.png"/>">  
 
     <!-- Bootstrap Core CSS -->
 	<link rel="stylesheet" type="text/css" href="<s:url value="/vendor/bootstrap/css/bootstrap.min.css"/>">
@@ -71,7 +71,9 @@
                 <p>
                 	Mondragon Unibertsitatearen eskuz sortutako online biltegi gestioa
                 </p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Saioa hasi</a>
+                <form action="goToLogin">
+                	<s:submit value="Saioa hasi" method="execute" class="btn btn-primary btn-xl page-scroll"></s:submit>                
+                </form>
             </div>
         </div>
     </header>
@@ -142,7 +144,7 @@
             <div class="row no-gutter popup-gallery">
                 <div class="col-lg-4 col-sm-6">
                     <a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">
-                        <img src="../img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
+                        <img src="<s:url value="/img/portfolio/thumbnails/1.jpg"/>" class="img-responsive" alt="">                        
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -157,7 +159,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
-                        <img src="../img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
+                        <img src="<s:url value="/img/portfolio/thumbnails/2.jpg"/>" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -172,7 +174,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="img/portfolio/fullsize/3.jpg" class="portfolio-box">
-                        <img src="../img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
+                        <img src="<s:url value="/img/portfolio/thumbnails/3.jpg"/>" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -187,7 +189,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="img/portfolio/fullsize/4.jpg" class="portfolio-box">
-                        <img src="../img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
+                        <img src="<s:url value="/img/portfolio/thumbnails/4.jpg"/>" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -202,7 +204,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="img/portfolio/fullsize/5.jpg" class="portfolio-box">
-                        <img src="../img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
+                        <img src="<s:url value="/img/portfolio/thumbnails/5.jpg"/>" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -217,7 +219,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="img/portfolio/fullsize/6.jpg" class="portfolio-box">
-                        <img src="../img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
+                        <img src="<s:url value="/img/portfolio/thumbnails/6.jpg"/>" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -264,18 +266,19 @@
     </section>
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="<s:url value="/vendor/jquery/jquery.min.js"/>"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<s:url value="/vendor/bootstrap/js/bootstrap.min.js"/>"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="../vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="<s:url value="/vendor/scrollreveal/scrollreveal.min.js"/>"></script>
+    
+    <script src="<s:url value="/vendor/magnific-popup/jquery.magnific-popup.min.js"/>"></script>
 
     <!-- Theme JavaScript -->
-    <script src="../js/creative.min.js"></script>
+    <script src="<s:url value="/js/creative.min.js"/>"></script>
 
 </body>
 

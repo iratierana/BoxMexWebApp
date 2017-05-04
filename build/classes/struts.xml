@@ -6,10 +6,10 @@
 <struts>
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
 	<constant name="struts.ui.theme" value="simple" />
-
 	<package name="default" extends="struts-default" namespace="/" >
-		<action name="login" class="actions.login.LoginAction">
-			<result name="indexPage">/pages/index.jsp</result>
+	
+		<action name="goToLogin" class="actions.login.LoginAction">
+			<result name="login">/pages/login.jsp</result>
 		</action>
 
 	</package>
