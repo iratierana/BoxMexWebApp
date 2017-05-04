@@ -8,7 +8,7 @@
 	<constant name="struts.ui.theme" value="simple" />
 	<package name="default" extends="struts-default" namespace="/" >
 	
-		<action name="goToLogin" class="actions.login.LoginAction">
+		<action name="goToLogin" class="actions.login.IndexAction">
 			<result name="login">/pages/login.jsp</result>
 		</action>
 

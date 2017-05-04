@@ -1,6 +1,6 @@
 package actions.login;
 
-public class LoginAction {
+public class IndexAction {
 	
 	public String execute(){
 		return "login";
