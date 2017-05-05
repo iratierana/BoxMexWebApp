@@ -13,10 +13,10 @@
         <div class="card card-container">
             <img id="profile-img" class="profile-img-card" src="<s:url value="/img/boxMexIcon.png"/>" />
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin">
+            <form action="userAuthentication" class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me"> Recordarme

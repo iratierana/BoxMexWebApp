@@ -53,7 +53,7 @@
                         <a class="page-scroll" href="#services">Zerbitzuak</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Iduriak</a>
+                        <a class="page-scroll" href="#portfolio">Irudiak</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Kontaktua</a>
