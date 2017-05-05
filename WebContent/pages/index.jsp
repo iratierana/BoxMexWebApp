@@ -53,7 +53,7 @@
                         <a class="page-scroll" href="#services">Zerbitzuak</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Aukerak</a>
+                        <a class="page-scroll" href="#portfolio">Iduriak</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Kontaktua</a>
@@ -66,7 +66,7 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Ongi etorri BoxMex biltegi kudeatzalera</h1>
+                <h1 id="homeHeading">Ongi etorri BoxMex biltegi kudeatzailera</h1>
                 <hr>
                 <p>
                 	Mondragon Unibertsitatearen eskuz sortutako online biltegi gestioa
@@ -143,30 +143,24 @@
         <div class="container-fluid">
             <div class="row no-gutter popup-gallery">
                 <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">
+                    <a href="<s:url value="/img/portfolio/fullsize/1.jpg"/>" class="portfolio-box">
                         <img src="<s:url value="/img/portfolio/thumbnails/1.jpg"/>" class="img-responsive" alt="">                        
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
+                                    Kokalekua
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
+                    <a href="<s:url value="img/portfolio/fullsize/2.jpg"/>" class="portfolio-box">
                         <img src="<s:url value="/img/portfolio/thumbnails/2.jpg"/>" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
+                                    Biltegia
                                 </div>
                             </div>
                         </div>
@@ -178,10 +172,7 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
+                                    Robota
                                 </div>
                             </div>
                         </div>
@@ -193,41 +184,32 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
+                                    Sistema
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/5.jpg" class="portfolio-box">
+                    <a href="<s:url value="img/portfolio/fullsize/5.jpg"/>" class="portfolio-box">
                         <img src="<s:url value="/img/portfolio/thumbnails/5.jpg"/>" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
+                                    Bulegoak
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/6.jpg" class="portfolio-box">
+                    <a href="<s:url value="img/portfolio/fullsize/6.jpg"/>" class="portfolio-box">
                         <img src="<s:url value="/img/portfolio/thumbnails/6.jpg"/>" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
+                                    Produktuak
+                                </div>                              
                             </div>
                         </div>
                     </a>
@@ -240,7 +222,7 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>Gutaz gehiago jakin nahi?!</h2>
-                <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Ikusi hemen!</a>
+                <a href="http://www.mondragon.edu/es/es" class="btn btn-default btn-xl sr-button">Ikusi hemen!</a>
             </div>
         </div>
     </aside>
