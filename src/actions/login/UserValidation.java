@@ -11,7 +11,10 @@ public class UserValidation {
 		
 		switch (1) {
 		case 1:
-			return "accept";
+			return "acceptAdmin";
+			
+		case 2:
+			return "acceptPeon";
 
 		case 0:
 			return "deny";
