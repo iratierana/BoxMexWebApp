@@ -7,59 +7,67 @@
 	<title>Admin</title>
 	
 	<link rel="shortcut icon" href="<s:url value="/img/boxMexIcon.png"/>"> 
+	<link rel="stylesheet" type="text/css" href="<s:url value="/vendor/font-awesome/css/font-awesome.min.css"/>">
 	<link rel="stylesheet" type="text/css" href="<s:url value="/vendor/bootstrap/css/bootstrap.min.css"/>">
 	<link rel="stylesheet" type="text/css" href="<s:url value="/css/creative.min.css"/>">
 	<link rel="stylesheet" type="text/css" href="<s:url value="/css/adminPanel.css"/>">
 	<script src="<s:url value="/vendor/jquery/jquery.min.js"/>"></script>
 </head>
 <body>
-
-
-	<div class="container">
-
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-home"></span> IA Sistema Aukerak
-				</h3>
+	<form action="adminPeonSelection">
+		<div class="container">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class="fa fa-plug"></span> IA Sistema Aukerak
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="iaAlgoEzarri" name="buttonName"> 
+							<span class="fa fa-plus-square-o"></span> <br />IA algoritmoa ezarri
+						</button> 
+						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="iaAlgoKendu" name="buttonName">
+							<span class="fa fa-trash-o"></span> <br />IA algoritmoa kendu
+						</button>	
+					</div>
+				</div>
 			</div>
-			<div class="panel-body">
-				<div class="row">
-					<div class=" ">
-						<a href="#" class="btn btn-danger btn-lg" role="button">
-							<span class="glyphicon glyphicon-trash"></span> 
-							<br/>IA algoritmoa ezarri
-						</a>
-						<a href="#" class="btn btn-warning btn-lg" role="button"><span
-							class="glyphicon glyphicon-refresh"></span> <br />IA algoritmoa kendu</a>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class="glyphicon glyphicon-home"></span> Biltegia
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="sistemaGelditu" name="buttonName">
+							<span class="fa fa-pause"></span> <br />Sistema gelditu
+						</button> 
+						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="sistemaMartxJarri" name="buttonName">
+							<span class="fa fa-forward"></span> <br />Sistema martxan ipini
+						</button>	
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class="fa fa-cog"></span> Biltegi kudeaketa
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="robotXehetasunak" name="buttonName">
+							<span class="fa fa-info-circle"></span> <br />Robotaren xehetasunak
+						</button> 
+						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="irteraHelmuga" name="buttonName"> 
+							<span class="fa fa-wrench"></span> <br />Abiapuntu/Helmuga
+						</button>	
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-home"></span> Biltegi kudeatzailea
-				</h3>
-			</div>
-			<div class="panel-body">
-				<div class="row">
-					<div class=" ">
-						<a href="#" class="btn btn-danger btn-lg" role="button">
-							<span class="glyphicon glyphicon-trash"></span> 
-							<br/>Sistema gelditu
-						</a>
-						<a href="#" class="btn btn-warning btn-lg" role="button"><span
-							class="glyphicon glyphicon-refresh"></span> <br />Sistema martxan ipini</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-
-
-
+	</form>
 </body>
 </html>

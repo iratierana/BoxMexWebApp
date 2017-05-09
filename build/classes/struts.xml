@@ -17,6 +17,11 @@
 			<result name="acceptPeon">/pages/peonControlPanel.jsp</result>
 			<result name="deny">/pages/login.jsp</result>
 		</action>
+		
+		<action name="adminPeonSelection" class="actions.adminPeon.AdminAndPeonSelection">
+			<result name="admin">/pages/adminControlPanel.jsp</result>
+			<result name="peon">/pages/peonControlPanel.jsp</result>
+		</action>
 
 	</package>
 </struts>

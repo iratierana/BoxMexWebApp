@@ -4,6 +4,7 @@ public class UserValidation {
 	
 	String username;
 	String password;
+	String returnValue = "deny";
 	
 	public String execute(){
 		
@@ -11,17 +12,15 @@ public class UserValidation {
 		
 		switch (1) {
 		case 1:
-			return "acceptAdmin";
+			returnValue = "acceptAdmin";
+			break;
 			
 		case 2:
-			return "acceptPeon";
-
-		case 0:
-			return "deny";
-			
-		default:
-			return "deny";
+			returnValue = "acceptPeon";
+			break;
+		
 		}
+		return returnValue;
 				
 	}
 

@@ -1,8 +1,18 @@
 body {
-	padding-top: 10%;
+	padding-top: 5%;
+	background-repeat: no-repeat;
+    background-image: url("../img/header.jpg"); 
 }
 
 .panel-body .btn:not (.btn-block ) {
 	width: 120px;
 	margin-bottom: 10px;
+}
+
+.panel-body{
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.btn{
+	color: black;
 }
