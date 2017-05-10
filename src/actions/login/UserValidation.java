@@ -10,8 +10,7 @@ public class UserValidation {
 	
 	public String execute(){
 		
-		//Erabiltzaile bat sortubiada hasierako konexiño hua itxeko(shared user)
-		DatabaseConnect.connectToTheDatabase("localhost", 5432, "BoxMexDatabase", "postgres", "1234"); 
+		DatabaseConnect.connectToTheDatabase("localhost", 5432, "BoxMexDatabase", "boxmexshareduser", "1234"); 
 		
 		switch (1) {
 		case 1:
