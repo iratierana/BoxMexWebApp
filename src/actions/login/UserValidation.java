@@ -1,5 +1,7 @@
 package actions.login;
 
+import databaseConn.DatabaseConnect;
+
 public class UserValidation {
 	
 	String username;
@@ -8,7 +10,8 @@ public class UserValidation {
 	
 	public String execute(){
 		
-		System.out.println("Username: "+username+"\nPassword: "+password);
+		//Erabiltzaile bat sortubiada hasierako konexiño hua itxeko(shared user)
+		DatabaseConnect.connectToTheDatabase("localhost", 5432, "BoxMexDatabase", "postgres", "1234"); 
 		
 		switch (1) {
 		case 1:

@@ -13,6 +13,7 @@ public class DatabaseConnect {
 		
 		try{
 			boolean connectionResult = false;
+			Class.forName("org.postgresql.Driver");
 			String dbURL3 = "jdbc:postgresql://"+ip+":"+port+"/"+databaseName+"";
 	        Properties parameters = new Properties();
 	        parameters.put("user", username);
@@ -24,7 +25,7 @@ public class DatabaseConnect {
 	        }
 	        return connectionResult;
 	        
-		}catch(SQLException e){
+		}catch(SQLException | ClassNotFoundException e){
 			e.printStackTrace();
 			return false;
 		}
