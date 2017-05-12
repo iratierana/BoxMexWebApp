@@ -3,6 +3,9 @@ package actions.login;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionContext;
 
 import databaseConn.DatabaseConnect;
 import entitys.system.Usuario;
@@ -15,16 +18,21 @@ public class UserValidation {
 	
 	public String execute(){
 		
+		Map<String, Object> session = ActionContext.getContext().getSession();
 		DatabaseConnect.connectToTheDatabase("localhost", 5432, "BoxMexDatabase", "boxmexshareduser", "1234"); 
 		Usuario user = comprobarUsuarioEnDB(username, password);
+		DatabaseConnect.disconnectToFromTheDatabase();
+		
 		if(user != null){
-			//TODO Erabiltzailia sesiñian gorde
+			session.put("loggedUser", user);
 			switch (user.getTipoUsuario()) {
 			case "A":
+				DatabaseConnect.connectToTheDatabase("localhost", 5432, "BoxMexDatabase", "boxmexadmin", "1234");
 				returnValue = "acceptAdmin";
 				break;
 				
 			case "P":
+				DatabaseConnect.connectToTheDatabase("localhost", 5432, "BoxMexDatabase", "boxmexpeon", "1234");
 				returnValue = "acceptPeon";
 				break;
 			
@@ -37,7 +45,7 @@ public class UserValidation {
 	private Usuario comprobarUsuarioEnDB(String username, String pass){
 		Usuario usuario = null;
 		try {
-			PreparedStatement statement = DatabaseConnect.conn.prepareStatement("SELECT * FROM usuarios WHERE username = ? AND pass = ?");
+			PreparedStatement statement = DatabaseConnect.conn.prepareStatement("SELECT * FROM boxmexsystem.usuarios WHERE username = ? AND pass = ?");
 			statement.setString(1, username);
 			statement.setString(2, pass);
 			ResultSet rs = statement.executeQuery();
