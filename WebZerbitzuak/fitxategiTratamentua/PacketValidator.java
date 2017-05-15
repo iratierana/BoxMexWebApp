@@ -3,6 +3,11 @@ package fitxategiTratamentua;
 import java.io.File;
 import java.io.IOException;
 
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
@@ -11,8 +16,12 @@ import javax.xml.validation.Validator;
 
 import org.xml.sax.SAXException;
 
+@Path("/packetValidator")
 public class PacketValidator {
 	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	@Consumes("text/plain")
 	public boolean validateXML(String xsdPath, String xmlPath){
 		
 		try {
