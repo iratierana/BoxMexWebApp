@@ -22,6 +22,10 @@
 			<result name="admin">/pages/adminControlPanel.jsp</result>
 			<result name="peon">/pages/peonControlPanel.jsp</result>
 		</action>
+		
+		<action name="robotInfoIkusi" class="actions.robota.RobotInfoIkusi">
+			<result name="goToRobotInfo">/pages/robotInfo.jsp</result>
+		</action>
 
 	</package>
 </struts>

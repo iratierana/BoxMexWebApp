@@ -14,7 +14,6 @@
 	<script src="<s:url value="/vendor/jquery/jquery.min.js"/>"></script>
 </head>
 <body>
-	<form action="adminPeonSelection">
 		<div class="container">			
 			<div class="panel panel-primary">
 				<div class="panel-heading">
@@ -41,9 +40,11 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="robotXehetasunak" name="buttonName">
-							<span class="fa fa-info-circle"></span> <br />Robotaren xehetasunak
-						</button> 
+						<form action="robotInfoIkusi">
+							<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="robotXehetasunak" name="buttonName">
+								<span class="fa fa-info-circle"></span> <br />Robotaren xehetasunak
+							</button> 
+						</form>
 						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="irteraHelmuga" name="buttonName"> 
 							<span class="fa fa-wrench"></span> <br />Abiapuntu/Helmuga
 						</button>	
@@ -51,6 +52,5 @@
 				</div>
 			</div>
 		</div>
-	</form>
 </body>
 </html>
