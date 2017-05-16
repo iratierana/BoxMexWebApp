@@ -22,9 +22,9 @@
 					</h3>
 				</div>
 				<div class="panel-body">
-					<form action="">
+					<form action="addListaEspera">
 						<label >Aukeratu IA sistemara bidaltzeko paketea: </label>					
-						<s:select list="idListPakeEntrada" /><br>
+						<s:select list="idListPakeEntrada" name = "paketeSelect"/><br>
 						<button class="btn btn-md btn-success" type="submit">Ok</button>
 					</form>
 				</div>
