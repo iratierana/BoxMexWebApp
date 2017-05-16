@@ -18,21 +18,25 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<span class="fa fa-plug"></span> Sarrera paketeak kueatu
+						<span class="fa fa-plug"></span> Sarrera paketeak kudeatu
 					</h3>
 				</div>
 				<div class="panel-body">
-				
+					<label >Aukeratu IA sistemara bidaltzeko paketea: </label>
+					<form action="">
+						<s:select list="idListPakeEntrada"	name="yourSearchEngine"	value="defaultSearchEngine" /><br>
+						<button class="btn btn-md btn-success" type="submit">Ok</button>
+					</form>
 				</div>
 			</div>
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<span class="fa fa-plug"></span> Irteera paketeak kueatu
+						<span class="fa fa-plug"></span> Irteera paketeak kudeatu
 					</h3>
 				</div>
 				<div class="panel-body">
-				
+					<!--TODO -->
 				</div>
 			</div>
 		</div>
