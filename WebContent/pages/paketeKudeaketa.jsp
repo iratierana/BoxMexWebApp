@@ -22,9 +22,9 @@
 					</h3>
 				</div>
 				<div class="panel-body">
-					<label >Aukeratu IA sistemara bidaltzeko paketea: </label>
 					<form action="">
-						<s:select list="idListPakeEntrada"	name="yourSearchEngine"	value="defaultSearchEngine" /><br>
+						<label >Aukeratu IA sistemara bidaltzeko paketea: </label>					
+						<s:select list="idListPakeEntrada" /><br>
 						<button class="btn btn-md btn-success" type="submit">Ok</button>
 					</form>
 				</div>

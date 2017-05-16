@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
 
+import DAO.RobotDAO;
 import databaseConn.DatabaseConnect;
 import entitys.system.Robot;
 import entitys.system.Usuario;
@@ -36,37 +37,18 @@ public class RobotInfoIkusi {
 		switch (loggedUser.getTipoUsuario()) {
 		case "A":
 			DatabaseConnect.connectToTheDatabase("localhost", 5432, "BoxMexDatabase", "boxmexadmin", "1234");
-			robot = infoRobotConsulta(robotId, tipo);
+			robot = RobotDAO.infoRobotConsulta(robotId, tipo);
 			break;
 		case "P":
 			DatabaseConnect.connectToTheDatabase("localhost", 5432, "BoxMexDatabase", "boxmexpeon", "1234");
-			robot = infoRobotConsulta(robotId, tipo);
+			robot = RobotDAO.infoRobotConsulta(robotId, tipo);
 			break;
 		}
 		
 		return robot;
 	}
 	
-	private Robot infoRobotConsulta(int robotId, String tipo){
-		
-		Robot robot = null;
-		try {
-			PreparedStatement statement = DatabaseConnect.conn.prepareStatement("SELECT * FROM boxmexsystem.robot WHERE robotid = ? AND tiporobot = ?");
-			statement.setInt(1, robotId);
-			statement.setString(2, tipo);
-			ResultSet rs = statement.executeQuery();
-			while(rs.next()){
-				robot = new Robot(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4));
-			}
-		} catch (SQLException e) {
-			DatabaseConnect.disconnectToFromTheDatabase();
-			e.printStackTrace();
-		}
-		
-		DatabaseConnect.disconnectToFromTheDatabase();
-		return robot;
-		
-	}
+	
 
  	public Robot getRobotIrtera() {
 		return robotIrtera;

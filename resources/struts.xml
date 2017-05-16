@@ -30,6 +30,10 @@
 		<action name="redirectPaketeKudeaketa" class="actions.paketeKudeaketa.GotoPaketeKudeaketa">
 			<result name="goToPaketeKudeaketa">/pages/paketeKudeaketa.jsp</result>
 		</action>
+		
+		<action name="addListaEspera" class="actions.paketeKudeaketa.AnadirToListaEspera">
+			<result name="ok">/pages/paketeKudeaketa.jsp</result>
+		</action>
 
 	</package>
 </struts>
