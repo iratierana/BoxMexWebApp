@@ -26,6 +26,10 @@
 		<action name="robotInfoIkusi" class="actions.robota.RobotInfoIkusi">
 			<result name="goToRobotInfo">/pages/robotInfo.jsp</result>
 		</action>
+		
+		<action name="redirectPaketeKudeaketa" class="actions.paketeKudeaketa.GotoPaketeKudeaketa">
+			<result name="goToPaketeKudeaketa">/pages/paketeKudeaketa.jsp</result>
+		</action>
 
 	</package>
 </struts>

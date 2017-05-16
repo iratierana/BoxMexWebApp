@@ -62,9 +62,11 @@
 							<span class="fa fa-info-circle"></span> <br />Robotaren xehetasunak
 							</button>
 						</form>						 
-						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="irteraHelmuga" name="buttonName"> 
-							<span class="fa fa-wrench"></span> <br />Abiapuntu/Helmuga
-						</button>	
+						<form action="redirectPaketeKudeaketa">
+							<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="irteraHelmuga" name="buttonName"> 
+								<span class="fa fa-wrench"></span> <br />Pakete kudeaketa
+							</button>	
+						</form>
 					</div>
 				</div>
 			</div>

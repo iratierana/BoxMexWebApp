@@ -14,43 +14,25 @@
 	<script src="<s:url value="/vendor/jquery/jquery.min.js"/>"></script>
 </head>
 <body>
-		<div class="container">			
+		<div class="container">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<span class="glyphicon glyphicon-home"></span> Biltegia
+						<span class="fa fa-plug"></span> Sarrera paketeak kueatu
 					</h3>
 				</div>
 				<div class="panel-body">
-					<div class="row">
-						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="sistemaGelditu" name="buttonName">
-							<span class="fa fa-pause"></span> <br />Sistema gelditu
-						</button> 
-						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="sistemaMartxJarri" name="buttonName">
-							<span class="fa fa-forward"></span> <br />Sistema martxan ipini
-						</button>	
-					</div>
+				
 				</div>
 			</div>
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<span class="fa fa-cog"></span> Biltegi kudeaketa
+						<span class="fa fa-plug"></span> Irteera paketeak kueatu
 					</h3>
 				</div>
 				<div class="panel-body">
-					<div class="row">
-						<form action="robotInfoIkusi">
-							<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="robotXehetasunak" name="buttonName">
-								<span class="fa fa-info-circle"></span> <br />Robotaren xehetasunak
-							</button> 
-						</form>
-						<form action="redirectPaketeKudeaketa">
-							<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="irteraHelmuga" name="buttonName"> 
-								<span class="fa fa-wrench"></span> <br />Pakete kudeaketa
-							</button>	
-						</form>
-					</div>
+				
 				</div>
 			</div>
 		</div>
