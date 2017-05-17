@@ -23,12 +23,16 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="iaAlgoEzarri" name="buttonName"> 
-							<span class="fa fa-plus-square-o"></span> <br />IA algoritmoa ezarri
-						</button> 
-						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="iaAlgoKendu" name="buttonName">
-							<span class="fa fa-trash-o"></span> <br />IA algoritmoa kendu
-						</button>	
+						<form action="iaOn">
+							<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="iaAlgoEzarri" name="buttonName"> 
+								<span class="fa fa-plus-square-o"></span> <br />IA algoritmoa ezarri
+							</button> 
+						</form>
+						<form action="iaOff">
+							<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="iaAlgoKendu" name="buttonName">
+								<span class="fa fa-trash-o"></span> <br />IA algoritmoa kendu
+							</button>	
+						</form>
 					</div>
 				</div>
 			</div>

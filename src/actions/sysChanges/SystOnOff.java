@@ -1,21 +1,21 @@
-package actions.sysGeldituMartx;
+package actions.sysChanges;
 
 import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
 
 import entitys.system.Usuario;
-import global.VariablesGlobales;
+import varGlobal.VariablesGlobales;
 
 public class SystOnOff {
 	
 	public String onSystem(){
-		VariablesGlobales.iaSistemaGeldiEdoMartxan = true;
+		VariablesGlobales.sistemaOsoaGeldiEdoMartxan = true;
 		return checkLoggedUser();
 	}
 	
 	public String offSystem(){
-		VariablesGlobales.iaSistemaGeldiEdoMartxan = false;
+		VariablesGlobales.sistemaOsoaGeldiEdoMartxan = false;
 		return checkLoggedUser();
 	}
 	

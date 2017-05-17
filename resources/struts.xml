@@ -36,13 +36,22 @@
 			<result name="ok">/pages/paketeKudeaketa.jsp</result>
 		</action>
 		
-		<action name="sysOn" class="actions.sysGeldituMartx.SystOnOff" method="onSystem">
+		<action name="sysOn" class="actions.sysChanges.SystOnOff" method="onSystem">
 			<result name="A">/pages/adminControlPanel.jsp</result>
 			<result name="P">/pages/peonControlPanel.jsp</result>
 		</action>
-		<action name="sysOff" class="actions.sysGeldituMartx.SystOnOff" method="offSystem">
+		
+		<action name="sysOff" class="actions.sysChanges.SystOnOff" method="offSystem">
 			<result name="A">/pages/adminControlPanel.jsp</result>
 			<result name="P">/pages/peonControlPanel.jsp</result>
+		</action>
+		
+		<action name="iaOn" class="actions.sysChanges.IAOnOff" method="iaOn">
+			<result name="ok">/pages/adminControlPanel.jsp</result>
+		</action>
+		
+		<action name="iaOff" class="actions.sysChanges.IAOnOff" method="iaOff">
+			<result name="ok">/pages/adminControlPanel.jsp</result>
 		</action>
 
 	</package>

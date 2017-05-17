@@ -1,4 +1,4 @@
-package IAsistema;
+package sistema;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import entitys.system.Pakete;
-import global.VariablesGlobales;
+import varGlobal.VariablesGlobales;
 
 @Path("/listaEspera")
 public class PaketeaBidali {
