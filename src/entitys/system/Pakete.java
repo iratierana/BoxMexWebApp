@@ -8,6 +8,10 @@ public class Pakete {
 	String estado;
 	ArrayList<Producto> listaProductos = new ArrayList<Producto>();
 	
+	public Pakete(){
+		
+	}
+	
 	public Pakete(int id, ArrayList<Producto> listaProductos, String estado) {
 		super();
 		this.id = id;

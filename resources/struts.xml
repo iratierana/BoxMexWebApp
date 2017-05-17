@@ -6,6 +6,7 @@
 <struts>
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
 	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.action.excludePattern" value="/BoxMexWebApp/.*"></constant>
 	<package name="default" extends="struts-default" namespace="/" >
 	
 		<action name="goToLogin" class="actions.login.IndexAction">

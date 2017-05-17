@@ -8,6 +8,10 @@ public class Producto {
 	int estanteriaId;
 	int categoriaId;
 	
+	public Producto(){
+		
+	}
+	
 	public Producto(int productoId, String nombre, String fechaCaducidad, int estanteriaId, int categoriaId) {
 		this.productoId = productoId;
 		this.nombre = nombre;

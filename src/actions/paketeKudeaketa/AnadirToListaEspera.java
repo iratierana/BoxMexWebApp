@@ -3,9 +3,9 @@ package actions.paketeKudeaketa;
 import java.util.ArrayList;
 
 import DAO.PaketeDAO;
-import Global.VariablesGlobales;
 import databaseConn.DatabaseConnect;
 import entitys.system.Pakete;
+import global.VariablesGlobales;
 
 public class AnadirToListaEspera {
 	
