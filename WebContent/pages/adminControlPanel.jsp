@@ -40,12 +40,16 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="sistemaGelditu" name="buttonName">
-							<span class="fa fa-pause"></span> <br />Sistema gelditu
-						</button> 
-						<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="sistemaMartxJarri" name="buttonName">
-							<span class="fa fa-forward"></span> <br />Sistema martxan ipini
-						</button>	
+						<form action="sysOff">
+							<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="sistemaGelditu" name="buttonName">
+								<span class="fa fa-pause"></span> <br />Sistema gelditu
+							</button> 
+						</form>
+						<form action="sysOn">
+							<button class="btn btn-default btn-sm btn-block btn-lg" type="submit" value="sistemaMartxJarri" name="buttonName">
+								<span class="fa fa-forward"></span> <br />Sistema martxan ipini
+							</button>	
+						</form>	
 					</div>
 				</div>
 			</div>

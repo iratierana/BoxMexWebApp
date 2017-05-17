@@ -23,7 +23,7 @@ public class PacketValidator {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	@Consumes("text/plain")
-	public boolean validateXML(@PathParam("xsdPath")String xsdPath, @PathParam("xmlPath") String xmlPath){
+	public String validateXML(@PathParam("xsdPath")String xsdPath, @PathParam("xmlPath") String xmlPath){
 		
 		try {
 			
@@ -34,9 +34,9 @@ public class PacketValidator {
             
         } catch (IOException | SAXException e) {
             System.out.println("Exception: "+e.getMessage());
-            return false;
+            return Boolean.FALSE.toString();
         }
-        return true;
+        return Boolean.TRUE.toString();
 		
 	}
 

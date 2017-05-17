@@ -35,6 +35,15 @@
 		<action name="addListaEspera" class="actions.paketeKudeaketa.AnadirToListaEspera">
 			<result name="ok">/pages/paketeKudeaketa.jsp</result>
 		</action>
+		
+		<action name="sysOn" class="actions.sysGeldituMartx.SystOnOff" method="onSystem">
+			<result name="A">/pages/adminControlPanel.jsp</result>
+			<result name="P">/pages/peonControlPanel.jsp</result>
+		</action>
+		<action name="sysOff" class="actions.sysGeldituMartx.SystOnOff" method="offSystem">
+			<result name="A">/pages/adminControlPanel.jsp</result>
+			<result name="P">/pages/peonControlPanel.jsp</result>
+		</action>
 
 	</package>
 </struts>
