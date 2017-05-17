@@ -1,4 +1,4 @@
-package Global;
+package global;
 import java.util.ArrayList;
 
 import entitys.system.Pakete;
