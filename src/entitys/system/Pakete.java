@@ -2,6 +2,11 @@ package entitys.system;
 
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement(namespace = "pakete")
+@XmlType(propOrder = {"id","estado","listaProductos"})
 public class Pakete {
 	
 	int id;
