@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Admin</title>
+	<title>Pakete kudeaketa</title>
 	
 	<link rel="shortcut icon" href="<s:url value="/img/boxMexIcon.png"/>"> 
 	<link rel="stylesheet" type="text/css" href="<s:url value="/vendor/font-awesome/css/font-awesome.min.css"/>">
@@ -36,7 +36,7 @@
 					</h3>
 				</div>
 				<div class="panel-body">
-					<!--TODO -->
+					<span>Coming soon!!!!</span>
 				</div>
 			</div>
 		</div>
