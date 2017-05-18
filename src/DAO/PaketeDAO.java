@@ -1,9 +1,14 @@
 package DAO;
 
+import java.io.StringReader;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 
 import databaseConn.DatabaseConnect;
 import entitys.system.Pakete;
@@ -95,6 +100,46 @@ public class PaketeDAO {
 			e.printStackTrace();
 		}	
 		return pakete;
+		
+	}
+
+	public static void insertPaketInDatabase(String paketInXML){
+		
+		PreparedStatement statement;
+		
+		try {					
+			
+			JAXBContext jaxbContext = JAXBContext.newInstance(Pakete.class);
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            
+            StringReader reader = new StringReader(paketInXML);            
+
+            Pakete pakete = (Pakete) jaxbUnmarshaller.unmarshal(reader);
+			
+			statement = DatabaseConnect.conn.prepareStatement("INSERT INTO boxmexsystem.pakete (estado) VALUES (?) RETURNING paketeid");
+			statement.setString(1, "entrada"); 
+			statement.execute();
+			
+			ResultSet rs = statement.getResultSet();
+			rs.next();
+			int azkenPaketeId = rs.getInt(1);
+			
+			for(Producto p : pakete.getListaProductos()){
+				statement = DatabaseConnect.conn.prepareStatement(
+						"INSERT INTO boxmexsystem.producto (nombre,fechacaducidad,estanteriaid,categoriaid,paketeid) VALUES (?,?,?,?,?);");
+				statement.setString(1, p.getNombre()); 
+				statement.setString(2, p.getFechaCaducidad()); 
+				statement.setInt(3, p.getEstanteriaId());
+				statement.setInt(4, p.getCategoriaId());
+				statement.setInt(5, azkenPaketeId);
+				statement.executeUpdate();
+			}
+			
+			
+			
+		} catch (SQLException | JAXBException e) {
+			e.printStackTrace();
+		}
 		
 	}
 }
