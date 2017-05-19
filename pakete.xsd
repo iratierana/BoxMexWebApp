@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="0.1" xml:lang="es">
+    <xs:element name="pakete">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+                <xs:element name="estado" type="xs:string"/>
+                <xs:element name="listaProductos" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="productoId" type="xs:integer"/>
+                            <xs:element name="nombre" type="xs:string"/>
+                            <xs:element name="fechaCaducidad" type="xs:string"/>
+                            <xs:element name="estanteriaId" type="xs:integer"/>
+                            <xs:element name="categoriaId" type="xs:integer"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
