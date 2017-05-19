@@ -3,7 +3,7 @@ package entitys.system;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(namespace = "pakete")
+@XmlRootElement(name = "pakete")
 @XmlType(propOrder = {"productoId","nombre","fechaCaducidad", "estanteriaId", "categoriaId"})
 public class Producto {
 
