@@ -1,8 +1,17 @@
+
 package actions.login;
 
+/**
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Retolaza
+ */
 public class IndexAction {
-	
-	public String execute(){
+
+	/**
+	 * @return Returns the name of the page where we want to go
+	 */
+	public String execute() {
 		return "login";
 	}
 
