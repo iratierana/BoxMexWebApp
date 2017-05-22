@@ -16,7 +16,7 @@ public class PaketDbInsertor {
 	public void insertPaketInDatabase(@FormParam("paketInXML")String paketInXML){
 		DatabaseConnect.connectToTheDatabase("localhost", 5432, "BoxMexDatabase", "boxmexadmin", "1234");
 		PaketeDAO.insertPaketInDatabase(paketInXML);
-		DatabaseConnect.disconnectToFromTheDatabase();
+		DatabaseConnect.disconnectFromTheDatabase();
 	}
 
 }

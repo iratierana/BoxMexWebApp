@@ -28,7 +28,7 @@ public class GotoPaketeKudeaketa {
 	public String execute() {
 		DatabaseConnect.connectToTheDatabase("localhost", PORT, "BoxMexDatabase", "boxmexadmin", "1234");
 		listPakeEntrada = PaketeDAO.actualizarListaPaquetesEstrada();
-		DatabaseConnect.disconnectToFromTheDatabase();
+		DatabaseConnect.disconnectFromTheDatabase();
 		idListPakeEntradaBete();
 		return "goToPaketeKudeaketa";
 	}

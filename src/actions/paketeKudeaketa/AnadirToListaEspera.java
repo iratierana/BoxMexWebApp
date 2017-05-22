@@ -36,7 +36,7 @@ public class AnadirToListaEspera {
 		PaketeDAO.cambiarEstadoToPakete(paketeSelect, "quieto");
 		listPakeEntrada = PaketeDAO.actualizarListaPaquetesEstrada();
 
-		DatabaseConnect.disconnectToFromTheDatabase();
+		DatabaseConnect.disconnectFromTheDatabase();
 		idListPakeEntradaBete();
 		return "ok";
 	}

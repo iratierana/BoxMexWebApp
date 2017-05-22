@@ -35,7 +35,7 @@ public class UserValidation {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		DatabaseConnect.connectToTheDatabase("localhost", PORT, "BoxMexDatabase", "boxmexshareduser", "1234");
 		Usuario user = UserDAO.comprobarUsuarioEnDB(username, password);
-		DatabaseConnect.disconnectToFromTheDatabase();
+		DatabaseConnect.disconnectFromTheDatabase();
 
 		if (user != null) {
 			session.put("loggedUser", user);
