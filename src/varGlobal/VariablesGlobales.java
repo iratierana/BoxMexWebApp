@@ -7,6 +7,6 @@ public class VariablesGlobales {
 	
 	public static ArrayList<Pakete> listaPakEnEsperaParaIA = new ArrayList<Pakete>();
 	public static boolean sistemaOsoaGeldiEdoMartxan = true;  //true: martxan    false: geldi
-	public static boolean isSistemaOsoaGeldiEdoMartxan = true;  //true: martxan    false: geldi
+	public static boolean iaSistemaOnOff = true;  //true: martxan    false: geldi
 	
 }
