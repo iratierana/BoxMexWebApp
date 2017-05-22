@@ -90,10 +90,8 @@ public class PaketeDAO {
 	/**
 	 * Cambiar estado to pakete.
 	 *
-	 * @param paketeId
-	 *            the pakete id
-	 * @param nuevoEstado
-	 *            the nuevo estado
+	 * @param paketeId the pakete id
+	 * @param nuevoEstado the nuevo estado
 	 */
 	public static void cambiarEstadoToPakete(final int paketeId, final String nuevoEstado) {
 
@@ -113,8 +111,7 @@ public class PaketeDAO {
 	/**
 	 * Cargar pakete.
 	 *
-	 * @param paketeId
-	 *            the pakete id
+	 * @param paketeId the pakete id
 	 * @return the pakete
 	 */
 	public static Pakete cargarPakete(final int paketeId) {
@@ -150,8 +147,7 @@ public class PaketeDAO {
 	/**
 	 * Insert paket in database.
 	 *
-	 * @param paketInXML
-	 *            the paket in XML
+	 * @param paketInXML the paket in XML
 	 */
 	public static void insertPaketInDatabase(final String paketInXML) {
 

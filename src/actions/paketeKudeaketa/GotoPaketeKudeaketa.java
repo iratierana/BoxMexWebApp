@@ -21,7 +21,7 @@ public class GotoPaketeKudeaketa {
 	ArrayList<Integer> idListPakeEntrada;
 
 	/**
-	 * Execute.
+	 * Actualizar la lista de paketes y redireccionar a la pagina determinada.
 	 *
 	 * @return the string
 	 */
@@ -55,8 +55,7 @@ public class GotoPaketeKudeaketa {
 	/**
 	 * Sets the list pake entrada.
 	 *
-	 * @param listPakeEntrada
-	 *            the new list pake entrada
+	 * @param listPakeEntrada the new list pake entrada
 	 */
 	public void setListPakeEntrada(final ArrayList<Pakete> listPakeEntrada) {
 		this.listPakeEntrada = listPakeEntrada;
@@ -74,8 +73,7 @@ public class GotoPaketeKudeaketa {
 	/**
 	 * Sets the id list pake entrada.
 	 *
-	 * @param idListPakeEntrada
-	 *            the new id list pake entrada
+	 * @param idListPakeEntrada the new id list pake entrada
 	 */
 	public void setIdListPakeEntrada(final ArrayList<Integer> idListPakeEntrada) {
 		this.idListPakeEntrada = idListPakeEntrada;

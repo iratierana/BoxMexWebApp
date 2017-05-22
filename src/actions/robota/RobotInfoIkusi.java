@@ -42,10 +42,8 @@ public class RobotInfoIkusi {
 	/**
 	 * Robotaren informazioa ikusi.
 	 *
-	 * @param robotId
-	 *            the robot id
-	 * @param tipo
-	 *            the tipo
+	 * @param robotId the robot id
+	 * @param tipo the tipo
 	 * @return the robot
 	 */
 	private Robot robotarenInformazioaIkusi(final int robotId, final String tipo) {
@@ -84,8 +82,7 @@ public class RobotInfoIkusi {
 	/**
 	 * Sets the robot irtera.
 	 *
-	 * @param robotIrtera
-	 *            the new robot irtera
+	 * @param robotIrtera the new robot irtera
 	 */
 	public void setRobotIrtera(final Robot robotIrtera) {
 		this.robotIrtera = robotIrtera;
@@ -103,8 +100,7 @@ public class RobotInfoIkusi {
 	/**
 	 * Sets the robot sarrera.
 	 *
-	 * @param robotSarrera
-	 *            the new robot sarrera
+	 * @param robotSarrera the new robot sarrera
 	 */
 	public void setRobotSarrera(final Robot robotSarrera) {
 		this.robotSarrera = robotSarrera;

@@ -70,8 +70,7 @@ public class UserValidation {
 	/**
 	 * Sets the username.
 	 *
-	 * @param username
-	 *            the new username
+	 * @param username  the new username
 	 */
 	public void setUsername(final String username) {
 		this.username = username;
@@ -89,8 +88,7 @@ public class UserValidation {
 	/**
 	 * Sets the password.
 	 *
-	 * @param password
-	 *            the new password
+	 * @param password the new password
 	 */
 	public void setPassword(final String password) {
 		this.password = password;

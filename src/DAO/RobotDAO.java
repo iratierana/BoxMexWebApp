@@ -27,10 +27,8 @@ public class RobotDAO {
 	/**
 	 * Gets the information of the robot from the databases.
 	 *
-	 * @param robotId
-	 *            the robot id
-	 * @param tipo
-	 *            the tipo
+	 * @param robotId the robot id
+	 * @param tipo the tipo
 	 * @return the robot
 	 */
 	public static Robot infoRobotConsulta(final int robotId, final String tipo) {

@@ -64,8 +64,7 @@ public class AnadirToListaEspera {
 	/**
 	 * Sets the id list pake entrada.
 	 *
-	 * @param idListPakeEntrada
-	 *            the new id list pake entrada
+	 * @param idListPakeEntrada the new id list pake entrada
 	 */
 	public void setIdListPakeEntrada(final ArrayList<Integer> idListPakeEntrada) {
 		this.idListPakeEntrada = idListPakeEntrada;
@@ -83,8 +82,7 @@ public class AnadirToListaEspera {
 	/**
 	 * Sets the pakete select.
 	 *
-	 * @param paketeSelect
-	 *            the new pakete select
+	 * @param paketeSelect the new pakete select
 	 */
 	public void setPaketeSelect(final int paketeSelect) {
 		this.paketeSelect = paketeSelect;
