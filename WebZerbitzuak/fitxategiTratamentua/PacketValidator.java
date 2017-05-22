@@ -18,27 +18,36 @@ import javax.xml.validation.Validator;
 
 import org.xml.sax.SAXException;
 
+/**
+ * The Class PacketValidator.
+ */
 @Path("/packetValidator")
 public class PacketValidator {
-	
+
+	/**
+	 * Validate XML rest web service.
+	 *
+	 * @param paketeXml the pakete xml
+	 * @return the string
+	 */
 	@POST
 	@Produces(MediaType.TEXT_PLAIN)
 	@Consumes("application/x-www-form-urlencoded")
-	public String validateXML(@FormParam("paketeXml") String paketeXml){
-		
+	public String validateXML(@FormParam("paketeXml") final String paketeXml) {
+
 		try {
-			
-            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = factory.newSchema(new File("D:/Uni3/2Semester/POPBL6/Kodigua/BoxMexWebApp/pakete.xsd"));
-            Validator validator = schema.newValidator();    
-            validator.validate(new StreamSource(new StringReader(paketeXml)));
-            
-        } catch (IOException | SAXException e) {
-            e.printStackTrace();
-            return Boolean.FALSE.toString();
-        }
-        return Boolean.TRUE.toString();
-		
+
+			SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+			Schema schema = factory.newSchema(new File("D:/Uni3/2Semester/POPBL6/Kodigua/BoxMexWebApp/pakete.xsd"));
+			Validator validator = schema.newValidator();
+			validator.validate(new StreamSource(new StringReader(paketeXml)));
+
+		} catch (IOException | SAXException e) {
+			e.printStackTrace();
+			return Boolean.FALSE.toString();
+		}
+		return Boolean.TRUE.toString();
+
 	}
 
 }

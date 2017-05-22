@@ -7,49 +7,51 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
 	<constant name="struts.ui.theme" value="simple" />
 	<constant name="struts.action.excludePattern" value="/BoxMexWebApp/.*"></constant>
-	<package name="default" extends="struts-default" namespace="/" >
-	
+	<package name="default" extends="struts-default" namespace="/">
+
 		<action name="goToLogin" class="actions.login.IndexAction">
 			<result name="login">/pages/login.jsp</result>
 		</action>
-		
+
 		<action name="userAuthentication" class="actions.login.UserValidation">
 			<result name="acceptAdmin">/pages/adminControlPanel.jsp</result>
 			<result name="acceptPeon">/pages/peonControlPanel.jsp</result>
 			<result name="deny">/pages/login.jsp</result>
 		</action>
-		
+
 		<action name="adminPeonSelection" class="actions.adminPeon.AdminAndPeonSelection">
 			<result name="admin">/pages/adminControlPanel.jsp</result>
 			<result name="peon">/pages/peonControlPanel.jsp</result>
 		</action>
-		
+
 		<action name="robotInfoIkusi" class="actions.robota.RobotInfoIkusi">
 			<result name="goToRobotInfo">/pages/robotInfo.jsp</result>
 		</action>
-		
+
 		<action name="redirectPaketeKudeaketa" class="actions.paketeKudeaketa.GotoPaketeKudeaketa">
 			<result name="goToPaketeKudeaketa">/pages/paketeKudeaketa.jsp</result>
 		</action>
-		
+
 		<action name="addListaEspera" class="actions.paketeKudeaketa.AnadirToListaEspera">
 			<result name="ok">/pages/paketeKudeaketa.jsp</result>
 		</action>
-		
-		<action name="sysOn" class="actions.sysChanges.SystOnOff" method="onSystem">
+
+		<action name="sysOn" class="actions.sysChanges.SystOnOff"
+			method="onSystem">
 			<result name="A">/pages/adminControlPanel.jsp</result>
 			<result name="P">/pages/peonControlPanel.jsp</result>
 		</action>
-		
-		<action name="sysOff" class="actions.sysChanges.SystOnOff" method="offSystem">
+
+		<action name="sysOff" class="actions.sysChanges.SystOnOff"
+			method="offSystem">
 			<result name="A">/pages/adminControlPanel.jsp</result>
 			<result name="P">/pages/peonControlPanel.jsp</result>
 		</action>
-		
+
 		<action name="iaOn" class="actions.sysChanges.IAOnOff" method="iaOn">
 			<result name="ok">/pages/adminControlPanel.jsp</result>
 		</action>
-		
+
 		<action name="iaOff" class="actions.sysChanges.IAOnOff" method="iaOff">
 			<result name="ok">/pages/adminControlPanel.jsp</result>
 		</action>
