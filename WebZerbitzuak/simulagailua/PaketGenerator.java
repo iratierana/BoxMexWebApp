@@ -54,7 +54,7 @@ public class PaketGenerator {
 	 * @return the pakete
 	 */
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Pakete generarPakete() {
 		Pakete pakete = null;
 		ArrayList<Producto> listaProductos = null;
