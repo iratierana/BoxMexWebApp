@@ -1,14 +1,9 @@
 package DAO;
 
-import java.io.StringReader;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 
 import databaseConn.DatabaseConnect;
 import entitys.system.Pakete;
@@ -147,23 +142,15 @@ public class PaketeDAO {
 	/**
 	 * Insert paket in database.
 	 *
-	 * @param paketInXML the paket in XML
+	 * @param pakete the paket in XML
 	 */
-	public static void insertPaketInDatabase(final String paketInXML) {
+	public static void insertPaketInDatabase(final Pakete pakete) {
 
 		PreparedStatement statement;
 
 		try {
 
-			JAXBContext jaxbContext = JAXBContext.newInstance(Pakete.class);
-			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-
-			StringReader reader = new StringReader(paketInXML);
-
-			Pakete pakete = (Pakete) jaxbUnmarshaller.unmarshal(reader);
-
-			statement = DatabaseConnect.conn
-					.prepareStatement("INSERT INTO boxmexsystem.pakete (estado) VALUES (?) RETURNING paketeid");
+			statement = DatabaseConnect.conn.prepareStatement("INSERT INTO boxmexsystem.pakete (estado) VALUES (?) RETURNING paketeid");
 			statement.setString(1, "entrada");
 			statement.execute();
 
@@ -176,13 +163,13 @@ public class PaketeDAO {
 						"INSERT INTO boxmexsystem.producto (nombre,fechacaducidad,estanteriaid,categoriaid,paketeid) VALUES (?,?,?,?,?);");
 				statement.setString(PARAMETRO_1, p.getNombre());
 				statement.setString(PARAMETRO_2, p.getFechaCaducidad());
-				statement.setInt(PARAMETRO_3, p.getEstanteriaId());
-				statement.setInt(PARAMETRO_4, p.getCategoriaId());
+				statement.setLong(PARAMETRO_3, p.getEstanteriaId());
+				statement.setLong(PARAMETRO_4, p.getCategoriaId());
 				statement.setInt(PARAMETRO_5, azkenPaketeId);
 				statement.executeUpdate();
 			}
 
-		} catch (SQLException | JAXBException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 

@@ -1,7 +1,6 @@
 package fitxategiTratamentua;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.StringReader;
 
 import javax.ws.rs.Consumes;
@@ -15,8 +14,6 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
-
-import org.xml.sax.SAXException;
 
 /**
  * The Class PacketValidator.
@@ -42,8 +39,7 @@ public class PacketValidator {
 			Validator validator = schema.newValidator();
 			validator.validate(new StreamSource(new StringReader(paketeXml)));
 
-		} catch (IOException | SAXException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
 			return Boolean.FALSE.toString();
 		}
 		return Boolean.TRUE.toString();
