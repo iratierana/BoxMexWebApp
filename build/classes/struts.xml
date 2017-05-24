@@ -6,10 +6,21 @@
 <struts>
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
 	<constant name="struts.ui.theme" value="simple" />
-
 	<package name="default" extends="struts-default" namespace="/" >
-		<action name="login" class="actions.login.LoginAction">
-			<result name="indexPage">/pages/index.jsp</result>
+	
+		<action name="goToLogin" class="actions.login.IndexAction">
+			<result name="login">/pages/login.jsp</result>
+		</action>
+		
+		<action name="userAuthentication" class="actions.login.UserValidation">
+			<result name="acceptAdmin">/pages/adminControlPanel.jsp</result>
+			<result name="acceptPeon">/pages/peonControlPanel.jsp</result>
+			<result name="deny">/pages/login.jsp</result>
+		</action>
+		
+		<action name="adminPeonSelection" class="actions.adminPeon.AdminAndPeonSelection">
+			<result name="admin">/pages/adminControlPanel.jsp</result>
+			<result name="peon">/pages/peonControlPanel.jsp</result>
 		</action>
 
 	</package>
