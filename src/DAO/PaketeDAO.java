@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import databaseConn.DatabaseConnect;
 import entitys.system.Pakete;
 import entitys.system.Producto;
+
+
 /**
  * The Class PaketeDAO.
  */
@@ -58,12 +60,12 @@ public class PaketeDAO {
 			while (rs.next()) {
 				if (kont == 0) {
 					paketeId = rs.getInt(PARAMETRO_1);
-					productos.add(
-							new Producto(rs.getInt(PARAMETRO_2), rs.getString(PARAMETRO_3), rs.getString(PARAMETRO_4), rs.getInt(PARAMETRO_5), rs.getInt(PARAMETRO_6)));
+					productos.add(new Producto(rs.getInt(PARAMETRO_2), rs.getString(PARAMETRO_3),
+							rs.getString(PARAMETRO_4), rs.getInt(PARAMETRO_5), rs.getInt(PARAMETRO_6)));
 				} else {
 					if (paketeId == rs.getInt(1)) {
-						productos.add(new Producto(rs.getInt(PARAMETRO_2), rs.getString(PARAMETRO_3), rs.getString(PARAMETRO_4), rs.getInt(PARAMETRO_5),
-								rs.getInt(PARAMETRO_6)));
+						productos.add(new Producto(rs.getInt(PARAMETRO_2), rs.getString(PARAMETRO_3),
+								rs.getString(PARAMETRO_4), rs.getInt(PARAMETRO_5), rs.getInt(PARAMETRO_6)));
 						paketeId = rs.getInt(1);
 					} else {
 						pakete = new Pakete(paketeId, productos, "entrada");
@@ -85,8 +87,10 @@ public class PaketeDAO {
 	/**
 	 * Cambiar estado to pakete.
 	 *
-	 * @param paketeId the pakete id
-	 * @param nuevoEstado the nuevo estado
+	 * @param paketeId
+	 *            the pakete id
+	 * @param nuevoEstado
+	 *            the nuevo estado
 	 */
 	public static void cambiarEstadoToPakete(final int paketeId, final String nuevoEstado) {
 
@@ -106,10 +110,13 @@ public class PaketeDAO {
 	/**
 	 * Cargar pakete.
 	 *
-	 * @param paketeId the pakete id
+	 * @param paketeId
+	 *            the pakete id
+	 * @param nuevoEstado
+	 *            el nuevo estado que se quiere poner
 	 * @return the pakete
 	 */
-	public static Pakete cargarPakete(final int paketeId) {
+	public static Pakete cargarPakete(final int paketeId, final String nuevoEstado) {
 
 		Pakete pakete = null;
 
@@ -128,10 +135,11 @@ public class PaketeDAO {
 			ResultSet rs = statement.executeQuery();
 
 			while (rs.next()) {
-				producto = new Producto(rs.getInt(2), rs.getString(PARAMETRO_3), rs.getString(PARAMETRO_4), rs.getInt(PARAMETRO_5), rs.getInt(PARAMETRO_6));
+				producto = new Producto(rs.getInt(2), rs.getString(PARAMETRO_3), rs.getString(PARAMETRO_4),
+						rs.getInt(PARAMETRO_5), rs.getInt(PARAMETRO_6));
 				listaProductos.add(producto);
 			}
-			pakete = new Pakete(paketeId, listaProductos, "quieto");
+			pakete = new Pakete(paketeId, listaProductos, nuevoEstado);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -140,9 +148,31 @@ public class PaketeDAO {
 	}
 
 	/**
+	 * Cargarprimer pakete quieto id.
+	 *
+	 * @return the int
+	 */
+	public static int cargarprimerPaketeQuietoId() {
+
+		int idPakete = -1;
+
+		try {
+			PreparedStatement statement = DatabaseConnect.conn.prepareStatement(
+					"select paketeid from boxmexsystem.pakete where estado = 'quieto'");
+			ResultSet rs = statement.executeQuery();
+			idPakete = rs.getInt(1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return idPakete;
+
+	}
+
+	/**
 	 * Insert paket in database.
 	 *
-	 * @param pakete the paket in XML
+	 * @param pakete
+	 *            the paket in XML
 	 */
 	public static void insertPaketInDatabase(final Pakete pakete) {
 
@@ -150,7 +180,8 @@ public class PaketeDAO {
 
 		try {
 
-			statement = DatabaseConnect.conn.prepareStatement("INSERT INTO boxmexsystem.pakete (estado) VALUES (?) RETURNING paketeid");
+			statement = DatabaseConnect.conn
+					.prepareStatement("INSERT INTO boxmexsystem.pakete (estado) VALUES (?) RETURNING paketeid");
 			statement.setString(1, "entrada");
 			statement.execute();
 
