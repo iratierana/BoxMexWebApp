@@ -56,5 +56,9 @@
 			<result name="ok">/pages/adminControlPanel.jsp</result>
 		</action>
 
+		<action name="galderak" class="actions.goToGalderak.GoToGalderak">
+			<result name="ok">/pages/ohikoGalderak.jsp</result>
+		</action>
+
 	</package>
 </struts>
