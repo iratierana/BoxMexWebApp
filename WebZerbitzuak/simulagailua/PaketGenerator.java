@@ -21,7 +21,7 @@ import entitys.system.Producto;
 public class PaketGenerator {
 
 	/** The Constant MAX_Paketes. */
-	private static final int MAX_PAKETES = 10;
+	private static final int MAX_PAKETES = 9;
 
 	/** The Constant MAX_CATEGORIAS. */
 	private static final int MAX_CATEGORIAS = 4;
@@ -76,9 +76,18 @@ public class PaketGenerator {
 		Producto producto = null;
 
 		for (int kont = 0; kont < generateRandNumber(1, MAX_PAKETES); kont++) {
-			producto = new Producto(1, generateRandomName(), generateRandData(), retRandEstanteria(),
-					retRandCategoria());
-			listaProductos.add(producto);
+			producto = new Producto(1, generateRandomName(), generateRandData(), retRandEstanteria(), retRandCategoria());
+
+			int rep = 0;
+			for (Producto p : listaProductos) {
+				if (p.getEstanteriaId() == producto.getEstanteriaId()) {
+					rep++;
+				}
+			}
+			if (rep == 0) {
+				listaProductos.add(producto);
+			}
+
 		}
 
 		return listaProductos;
@@ -110,7 +119,8 @@ public class PaketGenerator {
 	@SuppressWarnings("deprecation")
 	private String generateRandData() {
 		Faker faker = new Faker();
-		Date date = faker.date().between(new Date(ANIO_INICIO, MES_INICIO, DIA_INICIO), new Date(ANIO_FIN, MES_FIN, DIA_FIN));
+		Date date = faker.date().between(new Date(ANIO_INICIO, MES_INICIO, DIA_INICIO),
+				new Date(ANIO_FIN, MES_FIN, DIA_FIN));
 		return date.toString();
 	}
 
