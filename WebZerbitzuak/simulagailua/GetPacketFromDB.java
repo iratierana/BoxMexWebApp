@@ -1,6 +1,7 @@
 package simulagailua;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -10,6 +11,7 @@ import entitys.system.Pakete;
 /**
  * The Class GetPacketFromDB.
  */
+@Path("/listaSalida")
 public class GetPacketFromDB {
 
 	/**
