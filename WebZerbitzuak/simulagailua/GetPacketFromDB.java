@@ -24,7 +24,9 @@ public class GetPacketFromDB {
 	public Pakete generarPakete() {
 		Pakete pakete = null;
 		int paketeId = PaketeDAO.cargarprimerPaketeQuietoId();
-		pakete = PaketeDAO.cargarPakete(paketeId, "salida");
+		if (paketeId != -1) {
+			pakete = PaketeDAO.cargarPakete(paketeId, "salida");
+		}
 		return pakete;
 	}
 
