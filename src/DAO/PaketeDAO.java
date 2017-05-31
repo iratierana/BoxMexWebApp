@@ -9,7 +9,6 @@ import databaseConn.DatabaseConnect;
 import entitys.system.Pakete;
 import entitys.system.Producto;
 
-
 /**
  * The Class PaketeDAO.
  */
@@ -157,10 +156,12 @@ public class PaketeDAO {
 		int idPakete = -1;
 
 		try {
-			PreparedStatement statement = DatabaseConnect.conn.prepareStatement(
-					"select paketeid from boxmexsystem.pakete where estado = 'quieto'");
+			PreparedStatement statement = DatabaseConnect.conn.prepareStatement("select paketeid from boxmexsystem.pakete where estado = 'quieto'");
 			ResultSet rs = statement.executeQuery();
-			idPakete = rs.getInt(1);
+			if (rs.next()) {
+				idPakete = rs.getInt(1);
+			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
