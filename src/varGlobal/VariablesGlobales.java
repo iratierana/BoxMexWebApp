@@ -9,7 +9,7 @@ import entitys.system.Pakete;
  */
 public class VariablesGlobales {
 
-	/** The lista pak en espera para IA. */
+	/** The lista paketes en espera para IA. */
 	public static ArrayList<Pakete> listaPakEnEsperaParaIA = new ArrayList<Pakete>();
 
 	/** The sistema osoa geldi edo martxan. */

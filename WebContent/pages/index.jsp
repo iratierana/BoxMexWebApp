@@ -221,8 +221,10 @@
      <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Gutaz gehiago jakin nahi?!</h2>
-                <a href="http://www.mondragon.edu/es/es" class="btn btn-default btn-xl sr-button">Ikusi hemen!</a>
+                <h2>Ohiko galderak</h2>
+                <form action="galderak">
+                	<button class="btn btn-default btn-xl sr-button">Ikusi hemen!</button>
+                </form>                
             </div>
         </div>
     </aside>

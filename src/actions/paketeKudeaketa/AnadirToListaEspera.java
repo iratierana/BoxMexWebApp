@@ -31,7 +31,7 @@ public class AnadirToListaEspera {
 	 */
 	public String execute() {
 		DatabaseConnect.connectToTheDatabase("localhost", PORT, "BoxMexDatabase", "boxmexadmin", "1234");
-		Pakete pakete = PaketeDAO.cargarPakete(paketeSelect);
+		Pakete pakete = PaketeDAO.cargarPakete(paketeSelect, "quieto");
 		VariablesGlobales.listaPakEnEsperaParaIA.add(pakete);
 		PaketeDAO.cambiarEstadoToPakete(paketeSelect, "quieto");
 		listPakeEntrada = PaketeDAO.actualizarListaPaquetesEstrada();

@@ -30,7 +30,6 @@ public class PaketeaBidali {
 			VariablesGlobales.listaPakEnEsperaParaIA.remove(0);
 
 		} catch (IndexOutOfBoundsException e) {
-			System.out.println("La lista de espera esta vacio");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
