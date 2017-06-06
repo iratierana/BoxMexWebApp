@@ -17,6 +17,8 @@
 			<result name="acceptAdmin">/pages/adminControlPanel.jsp</result>
 			<result name="acceptPeon">/pages/peonControlPanel.jsp</result>
 			<result name="deny">/pages/login.jsp</result>
+			<interceptor-ref name="token" />
+			<interceptor-ref name="defaultStack" />
 		</action>
 
 		<action name="adminPeonSelection" class="actions.adminPeon.AdminAndPeonSelection">

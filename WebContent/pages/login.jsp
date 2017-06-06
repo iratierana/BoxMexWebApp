@@ -22,6 +22,7 @@
                         <input type="checkbox" value="remember-me"> Recordarme
                     </label>
                 </div>
+                <s:token />
                 <button class="btn btn-lg btn-success btn-block btn-signin" type="submit">Iniciar Sesión</button>
             </form>
         </div>
