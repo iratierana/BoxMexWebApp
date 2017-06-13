@@ -13,7 +13,7 @@ public class IAOnOff {
 	 * @return on value
 	 */
 	public String iaOn() {
-		VariablesGlobales.iaSistemaOnOff = true;
+		VariablesGlobales.setIaSistemaOnOff(true);
 		return "ok";
 	}
 
@@ -23,7 +23,7 @@ public class IAOnOff {
 	 * @return off value
 	 */
 	public String iaOff() {
-		VariablesGlobales.iaSistemaOnOff = false;
+		VariablesGlobales.setIaSistemaOnOff(false);
 		return "ok";
 	}
 

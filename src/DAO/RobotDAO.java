@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import databaseConn.DatabaseConnect;
 import entitys.system.Robot;
 
@@ -23,6 +25,8 @@ public class RobotDAO {
 
 	/** The Constant Parametro_4. */
 	private static final int PARAMETRO_4 = 4;
+	
+	static final Logger logger = Logger.getLogger(RobotDAO.class);
 
 	/**
 	 * Gets the information of the robot from the databases.
@@ -35,7 +39,7 @@ public class RobotDAO {
 
 		Robot robot = null;
 		try {
-			PreparedStatement statement = DatabaseConnect.conn
+			PreparedStatement statement = DatabaseConnect.getConn()
 					.prepareStatement("SELECT * FROM boxmexsystem.robot WHERE robotid = ? AND tiporobot = ?");
 			statement.setInt(1, robotId);
 			statement.setString(2, tipo);
@@ -45,7 +49,7 @@ public class RobotDAO {
 			}
 		} catch (SQLException e) {
 			DatabaseConnect.disconnectFromTheDatabase();
-			e.printStackTrace();
+			logger.info(e);
 		}
 
 		DatabaseConnect.disconnectFromTheDatabase();

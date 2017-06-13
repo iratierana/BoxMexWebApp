@@ -21,7 +21,7 @@ public class IaSystemaOnOff {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getEstadoDeSistema() {
-		return String.valueOf(VariablesGlobales.iaSistemaOnOff);
+		return String.valueOf(VariablesGlobales.isIaSistemaOnOff());
 	}
 
 }

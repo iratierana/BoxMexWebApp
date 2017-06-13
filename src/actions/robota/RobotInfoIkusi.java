@@ -49,7 +49,7 @@ public class RobotInfoIkusi {
 	private Robot robotarenInformazioaIkusi(final int robotId, final String tipo) {
 
 		Robot robot = null;
-		Usuario loggedUser = null;
+		Usuario loggedUser;
 
 		session = ActionContext.getContext().getSession();
 		loggedUser = (Usuario) session.get("loggedUser");

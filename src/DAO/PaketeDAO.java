@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import databaseConn.DatabaseConnect;
 import entitys.system.Pakete;
 import entitys.system.Producto;
@@ -31,6 +33,8 @@ public class PaketeDAO {
 
 	/** The Constant Parametro_6. */
 	private static final int PARAMETRO_6 = 6;
+	
+	static final Logger logger = Logger.getLogger(PaketeDAO.class);
 
 	/**
 	 * Actualizar lista paquetes de entrada.
@@ -45,7 +49,7 @@ public class PaketeDAO {
 		int paketeId = -1;
 		try {
 			listPakeEntrada = new ArrayList<Pakete>();
-			PreparedStatement statement = DatabaseConnect.conn.prepareStatement(
+			PreparedStatement statement = DatabaseConnect.getConn().prepareStatement(
 					"SELECT pa.paketeId, po.prodid, po.nombre, po.fechacaducidad, po.estanteriaid, po.categoriaid "
 							+ "FROM boxmexsystem.pakete pa join boxmexsystem.producto po on pa.paketeId=po.paketeId "
 							+ "WHERE pa.estado = ?");
@@ -78,7 +82,7 @@ public class PaketeDAO {
 			pakete = new Pakete(paketeId, productos, "entrada");
 			listPakeEntrada.add(pakete);
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.info(e);
 		}
 		return listPakeEntrada;
 	}
@@ -94,14 +98,14 @@ public class PaketeDAO {
 	public static void cambiarEstadoToPakete(final int paketeId, final String nuevoEstado) {
 
 		try {
-			PreparedStatement statement = DatabaseConnect.conn
+			PreparedStatement statement = DatabaseConnect.getConn()
 					.prepareStatement("UPDATE boxmexsystem.pakete SET estado = ? WHERE paketeid = ?");
 			statement.setString(1, nuevoEstado);
 			statement.setInt(2, paketeId);
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.info(e);
 		}
 
 	}
@@ -123,7 +127,7 @@ public class PaketeDAO {
 		ArrayList<Producto> listaProductos = new ArrayList<Producto>();
 
 		try {
-			PreparedStatement statement = DatabaseConnect.conn.prepareStatement(
+			PreparedStatement statement = DatabaseConnect.getConn().prepareStatement(
 					"SELECT pa.paketeId, po.prodid, po.nombre, po.fechacaducidad, po.estanteriaid, po.categoriaid "
 							+ "FROM boxmexsystem.pakete pa join boxmexsystem.producto po on pa.paketeId=po.paketeId "
 							+ "WHERE pa.paketeId = ?");
@@ -140,7 +144,7 @@ public class PaketeDAO {
 			}
 			pakete = new Pakete(paketeId, listaProductos, nuevoEstado);
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.info(e);
 		}
 		return pakete;
 
@@ -156,14 +160,14 @@ public class PaketeDAO {
 		int idPakete = -1;
 
 		try {
-			PreparedStatement statement = DatabaseConnect.conn.prepareStatement("select paketeid from boxmexsystem.pakete where estado = 'quieto'");
+			PreparedStatement statement = DatabaseConnect.getConn().prepareStatement("select paketeid from boxmexsystem.pakete where estado = 'quieto'");
 			ResultSet rs = statement.executeQuery();
 			if (rs.next()) {
 				idPakete = rs.getInt(1);
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.info(e);
 		}
 		return idPakete;
 
@@ -181,7 +185,7 @@ public class PaketeDAO {
 
 		try {
 
-			statement = DatabaseConnect.conn
+			statement = DatabaseConnect.getConn()
 					.prepareStatement("INSERT INTO boxmexsystem.pakete (estado) VALUES (?) RETURNING paketeid");
 			statement.setString(1, "entrada");
 			statement.execute();
@@ -191,7 +195,7 @@ public class PaketeDAO {
 			int azkenPaketeId = rs.getInt(1);
 
 			for (Producto p : pakete.getListaProductos()) {
-				statement = DatabaseConnect.conn.prepareStatement(
+				statement = DatabaseConnect.getConn().prepareStatement(
 						"INSERT INTO boxmexsystem.producto (nombre,fechacaducidad,estanteriaid,categoriaid,paketeid) VALUES (?,?,?,?,?);");
 				statement.setString(PARAMETRO_1, p.getNombre());
 				statement.setString(PARAMETRO_2, p.getFechaCaducidad());
@@ -202,7 +206,7 @@ public class PaketeDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.info(e);
 		}
 
 	}

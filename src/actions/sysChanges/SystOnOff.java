@@ -18,7 +18,7 @@ public class SystOnOff {
 	 * @return the string
 	 */
 	public String onSystem() {
-		VariablesGlobales.sistemaOsoaGeldiEdoMartxan = true;
+		VariablesGlobales.setSistemaOsoaGeldiEdoMartxan(true);
 		return checkLoggedUser();
 	}
 
@@ -28,7 +28,7 @@ public class SystOnOff {
 	 * @return the string
 	 */
 	public String offSystem() {
-		VariablesGlobales.sistemaOsoaGeldiEdoMartxan = false;
+		VariablesGlobales.setSistemaOsoaGeldiEdoMartxan(false);
 		return checkLoggedUser();
 	}
 

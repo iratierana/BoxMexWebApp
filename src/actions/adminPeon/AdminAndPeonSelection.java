@@ -1,6 +1,10 @@
 
 package actions.adminPeon;
 
+import org.apache.log4j.Logger;
+
+import DAO.RobotDAO;
+
 /**
  * The Class AdminAndPeonSelection.
  */
@@ -18,35 +22,38 @@ public class AdminAndPeonSelection {
 	 * The buttons of the web page form.
 	 */
 	private String buttonName;
+	
+	static final Logger logger = Logger.getLogger(AdminAndPeonSelection.class);
 
 	/**
 	 * Default action to divide the redirect page.
 	 * @return It returns the page where we want to go
 	 */
 	public String execute() {
-		switch (buttonName) {
-		case "iaAlgoEzarri":
-			break;
-
-		case "iaAlgoKendu":
-			break;
-
-		case "sistemaGelditu":
-			break;
-
-		case "sistemaMartxJarri":
-			break;
-
-		case "robotXehetasunak":
-			break;
-
-		case "irteraHelmuga":
-			break;
-		default :
-			break;
-
-		}
-
+		logger.info("Entras en un switch case");
+//		switch (buttonName) {
+//		case "iaAlgoEzarri":
+//			break;
+//
+//		case "iaAlgoKendu":
+//			break;
+//
+//		case "sistemaGelditu":
+//			break;
+//
+//		case "sistemaMartxJarri":
+//			break;
+//
+//		case "robotXehetasunak":
+//			break;
+//
+//		case "irteraHelmuga":
+//			break;
+//		default :
+//			break;
+//
+//		}
+//
 		return "";
 	}
 

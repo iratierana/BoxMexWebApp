@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
 import databaseConn.DatabaseConnect;
 import entitys.system.Usuario;
 
@@ -29,6 +31,8 @@ public class UserDAO {
 
 	/** The Constant Parametro_6. */
 	private static final int PARAMETRO_6 = 6;
+	
+	static final Logger logger = Logger.getLogger(RobotDAO.class);
 
 	/**
 	 * Comprobar usuario en DB.
@@ -40,7 +44,7 @@ public class UserDAO {
 	public static Usuario comprobarUsuarioEnDB(final String username, final String pass) {
 		Usuario usuario = null;
 		try {
-			PreparedStatement statement = DatabaseConnect.conn
+			PreparedStatement statement = DatabaseConnect.getConn()
 					.prepareStatement("SELECT * FROM boxmexsystem.usuarios WHERE username = ? AND pass = ?");
 			statement.setString(1, username);
 			statement.setString(2, pass);
@@ -50,7 +54,7 @@ public class UserDAO {
 						rs.getInt(PARAMETRO_6));
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.info(e);
 		}
 
 		return usuario;

@@ -21,6 +21,6 @@ public class SistemaGeldituMartxanIpini {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getEstadoDeSistema() {
-		return String.valueOf(VariablesGlobales.sistemaOsoaGeldiEdoMartxan);
+		return String.valueOf(VariablesGlobales.isSistemaOsoaGeldiEdoMartxan());
 	}
 }

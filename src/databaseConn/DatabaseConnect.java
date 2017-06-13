@@ -5,13 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
+import DAO.RobotDAO;
+
 /**
  * The Class DatabaseConnect.
  */
 public class DatabaseConnect {
 
 	/** The connection variable. */
-	public static Connection conn = null;
+	private static Connection conn = null;
+	
+	static final Logger logger = Logger.getLogger(DatabaseConnect.class);
 
 	/**
 	 * Connect to the database and open a connection.
@@ -34,14 +40,11 @@ public class DatabaseConnect {
 			parameters.put("user", username);
 			parameters.put("password", password);
 
-			conn = DriverManager.getConnection(dbURL3, parameters);
-			if (conn != null) {
-				connectionResult = true;
-			}
+			setConn(DriverManager.getConnection(dbURL3, parameters));
 			return connectionResult;
 
 		} catch (SQLException | ClassNotFoundException e) {
-			e.printStackTrace();
+			logger.info(e);
 			return false;
 		}
 
@@ -55,15 +58,23 @@ public class DatabaseConnect {
 	public static boolean disconnectFromTheDatabase() {
 		boolean closingOk = false;
 		try {
-			if (conn != null && !conn.isClosed()) {
-				conn.close();
+			if (getConn() != null && !getConn().isClosed()) {
+				getConn().close();
 				closingOk = true;
 			}
 			return closingOk;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.info(e);
 			return closingOk;
 		}
+	}
+
+	public static Connection getConn() {
+		return conn;
+	}
+
+	public static void setConn(Connection conn) {
+		DatabaseConnect.conn = conn;
 	}
 
 }

@@ -26,8 +26,8 @@ public class PaketeaBidali {
 		Pakete pakete = null;
 		try {
 
-			pakete = VariablesGlobales.listaPakEnEsperaParaIA.get(0);
-			VariablesGlobales.listaPakEnEsperaParaIA.remove(0);
+			pakete = VariablesGlobales.getListaPakEnEsperaParaIA().get(0);
+			VariablesGlobales.getListaPakEnEsperaParaIA().remove(0);
 
 		} catch (IndexOutOfBoundsException e) {
 		} catch (Exception e) {
